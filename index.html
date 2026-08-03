@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅行站点导航</title>
+<style>
+  :root {
+    --accent: #0ea5e9;
+    --accent2: #14b8a6;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .header p {
+    font-size: 1.05rem;
+    color: #94a3b8;
+  }
+  .sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 720px;
+    width: 100%;
+  }
+  .site-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .site-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+  }
+  .site-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .site-card:nth-child(1) .site-icon { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .site-card:nth-child(2) .site-icon { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+  .site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .site-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .site-arrow {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer {
+    margin-top: 48px;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 480px) {
+    .header h1 { font-size: 1.8rem; }
+    .sites-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>旅行站点导航</h1>
+    <p>选择下方站点进入对应页面</p>
+  </div>
+  <div class="sites-grid">
+    <a class="site-card" href="travel-planner/">
+      <div class="site-icon">P</div>
+      <div class="site-title">旅行规划</div>
+      <div class="site-desc">5个目的地 · 14套方案对比 · 行程与预算</div>
+      <div class="site-arrow">进入页面 &rarr;</div>
+    </a>
+    <a class="site-card" href="travel-itinerary/">
+      <div class="site-icon">I</div>
+      <div class="site-title">行程方案</div>
+      <div class="site-desc">多目的地详细行程安排 · 预算估算 · 小贴士</div>
+      <div class="site-arrow">进入页面 &rarr;</div>
+    </a>
+  </div>
+  <div class="footer">
+    GitHub Pages 多站点合并部署
+  </div>
+</body>
+</html>
